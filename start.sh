@@ -21,8 +21,12 @@ if [ ! -z "$RELAY_PASSWORD" ]; then
     echo "✅ Password de relay configurado"
 fi
 
+# Crear directorios necesarios
+mkdir -p /var/log/icecast2
+chmod 755 /var/log/icecast2
+
 echo "🚀 Arrancando servidor Icecast para Lex Radio..."
 echo "📻 ¡Lex Radio está listo para transmitir!"
 
-# Iniciar Icecast
-icecast2 -c /etc/icecast2/icecast.xml
+# Iniciar Icecast en foreground para que no se cierre el contenedor
+icecast2 -c /etc/icecast2/icecast.xml -b
