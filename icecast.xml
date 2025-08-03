@@ -21,6 +21,7 @@
     </authentication>
 
     <hostname>0.0.0.0</hostname>
+    
     <listen-socket>
         <port>8000</port>
         <bind-address>0.0.0.0</bind-address>
@@ -34,15 +35,16 @@
         <burst-size>65536</burst-size>
         <hidden>0</hidden>
         <public>1</public>
-        <stream-name>Lex Radio 📻</stream-name>
-        <stream-description>La mejor música las 24 horas - Lex Radio Costa Rica</stream-description>
+        <stream-name>Lex Radio</stream-name>
+        <stream-description>La mejor musica 24/7 - Lex Radio Costa Rica</stream-description>
         <stream-url>https://lexradio.cr</stream-url>
-        <genre>Pop, Rock, Electrónica, Latino</genre>
+        <genre>Pop, Rock, Electronica, Latino</genre>
         <bitrate>128</bitrate>
         <type>audio/mpeg</type>
     </mount>
 
     <fileserve>1</fileserve>
+    
     <paths>
         <basedir>/usr/share/icecast2</basedir>
         <logdir>/var/log/icecast2</logdir>
