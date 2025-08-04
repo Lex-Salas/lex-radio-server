@@ -1,12 +1,8 @@
 <?xml version="1.0"?>
 <icecast>
-    <location>Costa Rica</location>
-    <admin>admin@lexradio.com</admin>
-
     <limits>
         <clients>100</clients>
         <sources>2</sources>
-        <threadpool>5</threadpool>
         <queue-size>524288</queue-size>
         <client-timeout>30</client-timeout>
         <header-timeout>15</header-timeout>
@@ -34,16 +30,11 @@
         <username>source</username>
         <password>LexRadio2025!</password>
         <max-listeners>100</max-listeners>
-        <dump-file>/tmp/dump.mp3</dump-file>
         <burst-size>65536</burst-size>
-        <fallback-mount>/silence.mp3</fallback-mount>
-        <fallback-override>1</fallback-override>
-        <fallback-when-full>1</fallback-when-full>
         <hidden>0</hidden>
         <public>1</public>
         <stream-name>Lex Radio</stream-name>
-        <stream-description>La mejor música 24/7 - Costa Rica</stream-description>
-        <stream-url>https://lexradio.cr</stream-url>
+        <stream-description>Costa Rica</stream-description>
         <genre>Variado</genre>
         <bitrate>128</bitrate>
         <type>audio/mpeg</type>
@@ -60,11 +51,9 @@
     </paths>
 
     <logging>
-        <accesslog>access.log</accesslog>
-        <errorlog>error.log</errorlog>
+        <accesslog>-</accesslog>
+        <errorlog>-</errorlog>
         <loglevel>3</loglevel>
-        <logsize>10000</logsize>
-        <logarchive>1</logarchive>
     </logging>
 
     <security>
