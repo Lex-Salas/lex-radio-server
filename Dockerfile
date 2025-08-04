@@ -1,15 +1,19 @@
-FROM moul/icecast
+FROM ubuntu:22.04
 
-# Copiar configuración personalizada
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    icecast2 \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
 COPY icecast.xml /etc/icecast2/icecast.xml
 
-# Variables de entorno
-ENV ICECAST_SOURCE_PASSWORD=LexRadio2025!
-ENV ICECAST_ADMIN_PASSWORD=LexAdmin2025!
-ENV ICECAST_RELAY_PASSWORD=LexRelay2025!
+RUN chmod 644 /etc/icecast2/icecast.xml && \
+    mkdir -p /var/log/icecast2 && \
+    chmod 755 /var/log/icecast2
 
-# Exponer puerto
 EXPOSE 8000
 
-# Comando de inicio
-CMD ["icecast2", "-c", "/etc/icecast2/icecast.xml"]
+CMD ["icecast2", "-c", "/etc/icecast2/icecast.xml", "-b"]
