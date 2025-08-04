@@ -16,4 +16,5 @@ RUN chmod 644 /etc/icecast2/icecast.xml && \
 
 EXPOSE 8000
 
-CMD ["icecast2", "-c", "/etc/icecast2/icecast.xml", "-b"]
+# Ejecutar en foreground para mantener el contenedor vivo
+CMD ["sh", "-c", "icecast2 -c /etc/icecast2/icecast.xml && tail -f /var/log/icecast2/error.log"]
